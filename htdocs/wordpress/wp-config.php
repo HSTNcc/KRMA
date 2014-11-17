@@ -14,6 +14,15 @@
  * @package WordPress
  */
 
+// Use these settings on the local server
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+  include( dirname( __FILE__ ) . '/wp-config-local.php' );
+  
+// Otherwise use the below settings (on live server)
+} else {
+
+// Live Server Database Settings
+	
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'krma_wordpress');
@@ -42,6 +51,8 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
+
+
 define('AUTH_KEY',         '8|jO* I+j^54(N|?3YhDtmX/[j]h:pzCe((QjJ;B$I.4`G ?=TWejE)t_nE|D<p}');
 define('SECURE_AUTH_KEY',  '<vSTaIg59QPw|wpD+@2k1:SAv6K_qE`2, *nWX@b(*G@o6TvpL2sHx6(>$4,9400');
 define('LOGGED_IN_KEY',    's~.c6M2`G$>Rg>O+NZ;/ k_>C(slh]5+Nz:Q=o;< 6];^W1KkpA3]=+/FC4<r0Y7');
@@ -50,6 +61,11 @@ define('AUTH_SALT',        'fRE6OVr[YHzN#3V7tqj/-+^B)r+xSG6-]-ppC|yM]WxMc$1lV8YI
 define('SECURE_AUTH_SALT', '!BXr.>-BJNCDUL6EgQ[yUO(|++;j`ixR{C^<L7(4_q_-&ah(8vgK&dRQ-t0T]dY+');
 define('LOGGED_IN_SALT',   'wk @S~-t#Y#tV;8Ljg=bA+od9}X<xU3_+ `LS_2_x>Qh|G59R*A#^E,%jiWkG=Pq');
 define('NONCE_SALT',       '!rZ]m_`5)(JyX|en:!+k1?@Ce3eTM]2GVMiBvc$xh9/tuPY;^+hP+y;Z_H>i=&@l');
+
+
+// Overwrites the database to save keep edeting the DB
+define('WP_HOME','http://krmabotanicals.com');
+define('WP_SITEURL','http://krmabotanicals.com');
 
 /**#@-*/
 
